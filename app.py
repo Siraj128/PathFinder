@@ -59,7 +59,7 @@ def main_app():
                 try:
                     learning_path = generate_learning_path(topic, level)
                     if learning_path:
-                        https://lottie.host/09c9b9a6-d5d8-4809-9b57-7973784b2671/Vp0yBngHwt.json
+                        lottie_success_url="https://lottie.host/4dd8d9e2-3df9-4610-933e-2ce735fd58dc/V98QUnX30s.lottie"
                         lottie_success = load_lottieurl(lottie_success_url)
     
                         # Display the animation
