@@ -66,7 +66,7 @@ def main_app():
                         if lottie_success:
                             st_lottie(lottie_success, speed=1, height=200, key="success_animation")
 
-                        st.toast('Your path has been crafted!', icon='🧭')
+                        # st.toast('Your path has been crafted!', icon='🧭')
                         st.success("Your personalized learning path is ready!")
                         for i, step in enumerate(learning_path):
                             with st.expander(f"**Step {i+1}: {step.get('step_title', 'Untitled Step')}**", expanded=(i==0)):
