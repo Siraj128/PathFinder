@@ -1,8 +1,6 @@
 # app.py - Now with Password Protection
 import streamlit as st
 from engine import generate_learning_path
-import requests
-from streamlit_lottie import st_lottie
 
 def check_password():
     """Returns `True` if the user has entered the correct password."""
@@ -29,12 +27,8 @@ def check_password():
         return False
     else:
         return True
-        
-def load_lottieurl(url: str):
-    r = requests.get(url)
-    if r.status_code != 200:
-        return None
-    return r.json()
+    
+
 
 def main_app():
     """This function runs the main part of the Streamlit app."""
@@ -59,14 +53,7 @@ def main_app():
                 try:
                     learning_path = generate_learning_path(topic, level)
                     if learning_path:
-                        lottie_success_url = "https://lottie.host/4dd8d9e2-3df9-4610-933e-2ce735fd58dc/V98QUnX30s.lottie"
-                        lottie_success = load_lottieurl(lottie_success_url)
-    
-                        # Display the animation
-                        if lottie_success:
-                            st_lottie(lottie_success, speed=1, height=200, key="success_animation")
-
-                        # st.toast('Your path has been crafted!', icon='🧭')
+                        st.balloons()
                         st.success("Your personalized learning path is ready!")
                         for i, step in enumerate(learning_path):
                             with st.expander(f"**Step {i+1}: {step.get('step_title', 'Untitled Step')}**", expanded=(i==0)):
