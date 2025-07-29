@@ -51,7 +51,7 @@ def main_app():
                 try:
                     learning_path = generate_learning_path(topic, level)
                     if learning_path:
-                        st.snow()
+                        st.toast('Your path has been crafted!', icon='🧭')
                         st.success("Your personalized learning path is ready!")
                         for i, step in enumerate(learning_path):
                             with st.expander(f"**Step {i+1}: {step.get('step_title', 'Untitled Step')}**", expanded=(i==0)):
